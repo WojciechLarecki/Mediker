@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Mediker.WebUI.Authentication;
 using Mediker.WebUI.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,7 +16,8 @@ namespace Mediker.WebUI.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var role = Roles.Patient;
+            return View(role);
         }
 
         public IActionResult LogIn()
